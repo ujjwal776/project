@@ -1,12 +1,15 @@
 const http = require('http');
+const data = {
+    firstName: 'Laurence',
+    lastname: 'svekis'
+}
+
 const site = http.createServer(function(req, res) {
-    console.log('hello world');
-    //Res.Write("yeh go http!!!!");
-    res.setHeader('content-Type', 'text/html');
-    console.log(req.rawHeaders);
-    res.end('<h1 > hello world </h1>');
-
-
-
+    console.log('Hello World');
+    console.log(req.headers);
+    console.log(req.url)
+    res.setHeader('Content-Type', 'text/html');
+    res.write(JSON.stringify(data));
+    res.end();
 });
 site.listen(3000);
