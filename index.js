@@ -1,8 +1,10 @@
 const http = require('http');
-const site = http.CreateServer(function(req, res) {
+const site = http.createServer(function(req, res) {
     console.log('hello world');
-    Res.Write("yeh go http!!!!");
-    res.setHeader("what should i do here??");
+    //Res.Write("yeh go http!!!!");
+    res.setHeader('content-Type', 'text/html');
+    console.log(req.rawHeaders);
+    res.end('<h1 > hello world </h1>');
 
 
 
