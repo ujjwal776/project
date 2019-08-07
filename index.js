@@ -15,12 +15,27 @@ const site = http.createServer(function(req, res) {
 site.listen(3000);*/
 var express = require('express');
 var app = express()
+const bodyparser = require('body-parser');
+
+app.use(bodyparser.urlencoded({ extended: false }));
+app.use(bodyparser.json());
+
+
 
 app.get('/', function(req, res) {
-    res.send('<h1>ji </h1>')
+    res.send('G2');
 })
-app.get('/', function(req, res) {
-    res.post('helooo there')
+app.post('/', function(req, res) {
+    console.log(req.body);
+    res.send('post send ');
+});
+app.put('/', function(req, res) {
+
+    res.send('this is put');
+});
+app.delete('/', function(req, res) {
+
+    res.send('delete');
 })
 
 app.listen(3000);
