@@ -17,7 +17,10 @@ var express = require('express');
 var app = express()
 
 app.get('/', function(req, res) {
-    res.send('helooo there')
+    res.send('<h1>ji </h1>')
+})
+app.get('/', function(req, res) {
+    res.post('helooo there')
 })
 
 app.listen(3000);
